@@ -56,15 +56,14 @@ def get_operand_index(expression, op):  # возвращаем первый сн
         return -1
 
 def iterator(expression):  # тут обрабатываем список элементов выражения
-#    print(expression)
     if expression[0] == '-': expression.insert(0, '0')  # это если в первое число в выражении отрицательное
     match len(expression):
         case 0:
             return []  # такого не должно быть, но все же...
         case 1:
-            return expression  # такого не должно быть, но все же...
+            return expression  # такого тоже не должно быть, но все же...
         case 2:
-            return expression[0]  # такого не должно быть, но все же...
+            return expression[0]  # и такого не должно быть, но все же...
         case 3:
             return [str(solver2operand(expression))]  # тут все просто - 3 элемента - просто считаем их
         case _:

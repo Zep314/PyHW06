@@ -6,14 +6,14 @@
 
 from random import randint
 
-def get_uniq(local_list: list) -> list:
+def get_uniq(local_list: list) -> list: # возвращаем уникальные элементы списка
     dict1={}
     for i in local_list:
-        if dict1.get(i,False):
+        if dict1.get(i,False): # ищем ключ в словаре
             dict1[i] += 1
         else:
            dict1[i] = 1
-    return [k for (k,v) in dict1.items() if v == 1]
+    return [k for (k,v) in dict1.items() if v == 1] # возвращаем ключи словаря, у которых значение == 1
 
 #my_list = [1, 2, 3, 5, 1, 5, 3, 10]
 my_list = [randint(0,10) for _ in range(10)]
